@@ -22,4 +22,9 @@ public class UserRestController {
       @RequestParam String gender) {
     return repository.findBy(title, firstName, lastName, gender);
   }
+
+  @GetMapping(path = "/full-name")
+  public Optional<FullName> findFullName(@RequestParam Long id) {
+    return repository.findFullNameById(id);
+  }
 }
